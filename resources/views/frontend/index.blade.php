@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Corona Test</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -9,6 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -30,7 +33,7 @@
         }
     </style>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
 <nav id="navbar-example2" class="navbar navbar-light bg-light scroll-to-top">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -264,5 +267,16 @@
     <p>Footer Text</p>
 </footer>
 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+
+
+        console.log("App");
+
+
+
+    });
+</script>
 </body>
 </html>
