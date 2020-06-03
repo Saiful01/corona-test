@@ -383,7 +383,7 @@
             <div class="icon icon-3 rotate-me"
                  style="background-image: url(/theme/assets/images/icons/anim-icon-5.png);"></div>
         </div>
-        <div class="auto-container">
+        {{--<div class="auto-container">
             <div class="title-inner clearfix">
                 <div class="sec-title pull-left">
                     <h6>Our Team</h6>
@@ -466,7 +466,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </section>
     <!-- team-section end -->
 
@@ -556,7 +556,7 @@
             <div class="icon icon-3 rotate-me"
                  style="background-image: url(/theme/assets/images/icons/anim-icon-5.png);"></div>
         </div>
-        <div class="auto-container">
+      {{--  <div class="auto-container">
             <div class="sec-title centred">
                 <h6>Our Article</h6>
                 <h2>Stay Updated with Our <br/>News Feed.</h2>
@@ -620,7 +620,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </section>
     <!-- news-section end -->
 

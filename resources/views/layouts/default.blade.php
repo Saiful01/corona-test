@@ -117,13 +117,13 @@
                             <li><a href="#symptoms">Symptoms</a></li>
                             <li><a href="#prevention">Prevention</a></li>
                             <li><a href="#faq">FAQ</a></li>
-                            <li class="dropdown"><a href="/">News</a>
+                          {{--  <li class="dropdown"><a href="/">News</a>
                                 <ul>
                                     <li><a href="blog-1.html">Blog Grid</a></li>
                                     <li><a href="blog-2.html">Blog Sidebar</a></li>
                                     <li><a href="blog-details.html">Blog Details</a></li>
                                 </ul>
-                            </li>
+                            </li>--}}
                         </ul>
                     </div>
                 </nav>
@@ -200,7 +200,7 @@
         </div>
         <div class="footer-top">
             <div class="auto-container">
-                <div class="widget-section">
+               {{-- <div class="widget-section">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="logo-widget footer-widget">
@@ -253,7 +253,7 @@
                                 <div class="widget-title">
                                     <h3>Contacts</h3>
                                 </div>
-                                <ul class="info-list clearfix">
+                             --}}{{--   <ul class="info-list clearfix">
                                     <li><i class="fas fa-map-marker-alt"></i>Flat 20, Reynolds Neck, North Helenaville,
                                         FV77 8WS
                                     </li>
@@ -261,7 +261,7 @@
                                     </li>
                                     <li><i class="fas fa-envelope"></i><a href="mailto:info@example.com">info@example.com</a>
                                     </li>
-                                </ul>
+                                </ul>--}}{{--
                                 <ul class="social-links clearfix">
                                     <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="/"><i class="fab fa-twitter"></i></a></li>
@@ -271,7 +271,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
         <div class="footer-bottom">
@@ -280,10 +280,10 @@
                     <div class="copyright pull-left">
                         <p><a href="/">Covid-19</a> &copy; 2020 All Right Reserved</p>
                     </div>
-                    <ul class="footer-nav pull-right">
+               {{--     <ul class="footer-nav pull-right">
                         <li><a href="/">Terms of Service</a></li>
                         <li><a href="/">Privacy Policy</a></li>
-                    </ul>
+                    </ul>--}}
                 </div>
             </div>
         </div>
