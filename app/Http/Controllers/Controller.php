@@ -196,4 +196,6 @@ class Controller extends BaseController
         }
         return view('common.test.answer')->with('result', $result);
     }
+
+
 }
