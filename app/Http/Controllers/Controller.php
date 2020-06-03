@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Patient;
 use App\Result;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -85,6 +86,8 @@ class Controller extends BaseController
         $request['extra_symptom'] = json_encode($request['extra_symptom']);
         $request['pre_disease'] = json_encode($request['pre_disease']);
         $request['score'] = $risk_counter;
+        $request['created_at'] = Carbon::now();
+        $request['updated_at'] = Carbon::now();
 
         try {
             $result_id = Result::insertGetId($request->all());
@@ -173,6 +176,8 @@ class Controller extends BaseController
 
         $result_id = $request['result_id'];
         $result = $request['result'];
+        $request['created_at'] = Carbon::now();
+        $request['updated_at'] = Carbon::now();
         unset($request['result_id']);
         unset($request['_token']);
         unset($request['result']);
