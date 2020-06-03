@@ -40,12 +40,12 @@
                                     </div>
                                     <div class="radio">
 
-                                        <input type="radio" name="age" ng-click="ageChange()" value="0-20"> ০-২০
-                                        <input type="radio" name="age" ng-click="ageChange()" value="21-30"> ২১-৩০
-                                        <input type="radio" name="age" ng-click="ageChange()" value="31-40"> ৩১-৪০
-                                        <input type="radio" name="age" ng-click="ageChange()" value="41-50"> ৪১-৫০
-                                        <input type="radio" name="age" ng-click="ageChange()" value="51-65"> ৫১-৬৫
-                                        <input type="radio" name="age" ng-click="ageChange()" value="65+"> ৬৫+
+                                        <input type="radio" name="age" ng-click="ageChange()" value="1"> ০-২০
+                                        <input type="radio" name="age" ng-click="ageChange()" value="2"> ২১-৩০
+                                        <input type="radio" name="age" ng-click="ageChange()" value="3"> ৩১-৪০
+                                        <input type="radio" name="age" ng-click="ageChange()" value="4"> ৪১-৫০
+                                        <input type="radio" name="age" ng-click="ageChange()" value="5"> ৫১-৬৫
+                                        <input type="radio" name="age" ng-click="ageChange()" value="6"> ৬৫+
 
                                     </div>
 
@@ -98,20 +98,20 @@
                                     <div class="radio">
 
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="96-98"> শরীরের
+                                               value="1"> শরীরের
                                         তাপমাত্রা স্বাভাবিক আছে 96°F-98.6°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="98-100"> শরীরের
+                                               value="2"> শরীরের
                                         তাপমাত্রা স্বাভাবিক আছে
                                         98°F-100.6°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="98-102"> জ্বর
+                                               value="3"> জ্বর
                                         98.6°F-102°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="102"> অনেক জ্বর
+                                               value="4"> অনেক জ্বর
                                         >102°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="no"> জানি না
+                                               value="5"> জানি না
 
                                     </div>
 
@@ -303,13 +303,13 @@
                                                value="1"> কোন
                                         পরিবর্তন নাই
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="2"> অনেক বেশী
+                                               value="3"> অনেক বেশী
                                         খারাপ
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="3"> আরও খারাপ
+                                               value="4"> আরও খারাপ
                                         হয়েছে
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="4"> আগের থেকে
+                                               value="2"> আগের থেকে
                                         ভালো
 
 

@@ -14,7 +14,20 @@ class CreateResultsTable extends Migration
     public function up()
     {
         Schema::create('results', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('result_id');
+            $table->string('age')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('is_pregnant')->nullable();
+            $table->string('temperature')->nullable();
+            $table->string('symptom')->nullable();
+            $table->string('extra_symptom')->nullable();
+            $table->string('disease')->nullable();
+            $table->string('pre_disease')->nullable();
+            $table->string('is_smoker')->nullable();
+            $table->string('is_nurse')->nullable();
+            $table->string('symptom_change')->nullable();
+            $table->integer('score')->default(0);
+            $table->unsignedBigInteger('patient_id')->nullable();
             $table->timestamps();
         });
     }

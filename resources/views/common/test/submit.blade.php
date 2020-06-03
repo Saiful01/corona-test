@@ -27,30 +27,33 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form action="/submit/save" method="post">
+                            <form action="/corona-test/result" method="post">
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">নাম</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="নাম">
+                                        <input type="text" class="form-control" id="inputEmail3" name="name" placeholder="নাম">
+                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                        <input type="hidden" name="result_id" value="{{$result_id}}">
+                                        <input type="hidden" name="result" value="{{$result}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">ইমেইল</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="ইমেইল">
+                                        <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="ইমেইল">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">মোবাইল নম্বর</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputPassword3"
-                                               placeholder="মোবাইল নম্বর">
+                                               placeholder="মোবাইল নম্বর" name="phone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">জেলা</label>
                                     <div class="col-sm-10">
-                                        <select id="inputState" class="form-control">
+                                        <select id="inputState" class="form-control" name="district">
                                             <option selected>ঢাকা</option>
                                             <option selected>চট্টগ্রাম</option>
 
@@ -61,7 +64,7 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">উপজেলা</label>
                                     <div class="col-sm-10">
-                                        <select id="inputState" class="form-control">
+                                        <select id="inputState" class="form-control" name="upazila">
                                             <option selected>ঢাকা</option>
                                             <option selected>চট্টগ্রাম</option>
 
@@ -72,8 +75,9 @@
 
 
                                 <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-10 pull-right">
-                                        <a href="/answer" class="btn btn-success">সাবমিট</a>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>

@@ -8,7 +8,7 @@
     <div class="col-md-8 mx-auto">
         <div class="container">
             <div class="card p-4">
-                <h4 class="text-danger text-center">মধ্যম ঝুঁকি</h4>
+                <h4 class="text-danger text-center">{{$result}}</h4>
                 <h6>আপনি এই উপদেশ গুলো মেনে চলুন:</h6>
                 <p>ডাক্তারের পরামর্শ নিন, বাসায় থাকুন, সতর্কতা অবলম্বন করুন ও নিজের যত্ন নিন।</p>
 
@@ -18,7 +18,7 @@
         <div class="container mt-3">
             <div class="card p-4">
                 <h6>ধন্যবাদ, ভবিষ্যৎ প্রয়োজনে আপনার তথ্য সংরক্ষণ করা হয়েছে।</h6>
-                <a href="" >পুনরায় টেস্ট করুন</a>
+                <a href="/" >পুনরায় টেস্ট করুন</a>
 
             </div>
 

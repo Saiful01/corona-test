@@ -16,28 +16,17 @@ Route::get('/corona', function () {
 });
 
 
-
 Route::get('/', 'Controller@home');
 Route::get('/corona-test', function () {
     return view('common.test.index');
 });
+Route::any('/corona-test/result', 'Controller@testSave');
 Route::get('/answer', function () {
     return view('common.test.answer');
 });
 
 
-
-
-
-
-
-
-
-
-
-
 Route::get('/form', 'Controller@coronaTest');
-
 
 
 Route::get('/login', 'AuthController@login');
@@ -48,9 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/dashboard', 'DashboardController@dashboard');
 
 
-
     Route::get('/dashboard', 'DashboardController@dashboard');
-
 
 
 });
