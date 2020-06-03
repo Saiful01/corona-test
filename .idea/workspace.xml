@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6118a413-0709-4f53-9429-0087e34b02ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="6118a413-0709-4f53-9429-0087e34b02ec" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +91,7 @@
     <session id="472394910">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -109,12 +108,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="197" />
+          <entry key="php" value="210" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="197" />
+          <entry key="Blade" value="210" />
         </counts>
       </usages-collector>
     </session>
@@ -133,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+            <state relative-caret-position="348">
+              <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#div#10;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -391,12 +390,12 @@
       <workItem from="1587572388089" duration="4000" />
       <workItem from="1587572402879" duration="6000" />
       <workItem from="1589297540828" duration="2955000" />
-      <workItem from="1591117961102" duration="1469000" />
+      <workItem from="1591117961102" duration="1709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23028000" />
+    <option name="totallyTimeSpent" value="23268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -659,8 +658,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+        <state relative-caret-position="348">
+          <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#div#10;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
