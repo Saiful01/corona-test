@@ -128,7 +128,7 @@
                     </div>
                 </nav>
                 <div class="btn-box">
-                    <a href="/corona-test" class="theme-btn"><i class="fas fa-phone"></i>Emergency Test</a>
+                    <a href="/corona-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                         <!--Keep This Empty / Menu will come through Javascript-->
                     </nav>
                     <div class="btn-box">
-                        <a href="/" class="theme-btn"><i class="fas fa-phone"></i>Emergency Call</a>
+                        <a href="/corona-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
                     </div>
                 </div>
             </div>
