@@ -2,38 +2,127 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
+use App\Result;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use PhpParser\Node\Stmt\Return_;
+use Mockery\Exception;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function coronaTest(Request $request){
 
-       // return $request->all();
-        return view('common.test.submit');
+    public function coronaTest(Request $request)
+    {
+
+        // return $request['symptom'];
+
+        $risk_counter = 0;
+
+
+        if ($request['age'] >= 5) {
+            $risk_counter += 5;
+        } else {
+            $risk_counter += 2;
+        }
+
+        if ($request['gender'] == "female") {
+            if ($request['is_pregnant'] == "yes") {
+                $risk_counter += 2;
+            }
+        }
+        //temperature
+
+        if ($request['temperature'] == 3) {
+            $risk_counter += 5;
+        } else if ($request['temperature'] == 4) {
+            $risk_counter += 10;
+        } else if ($request['temperature'] == 5) {
+            $risk_counter += 5;
+        } else {
+            $risk_counter = 0;
+        }
+
+        //Symptom
+        if (isset($request['symptom'])) {
+            $risk_counter += count($request['symptom']);
+        }
+
+
+        //Extra Symptom
+        if (isset($request['extra_symptom'])) {
+            $risk_counter += count($request['extra_symptom']);
+        }
+
+        //Disease
+        if ($request['disease'] != 1) {
+            $risk_counter += 10;
+        }
+        if (isset($request['pre_disease'])) {
+            $risk_counter += count($request['pre_disease']);
+        }
+
+        //Smoking
+        if ($request['is_smoker'] == "yes") {
+            $risk_counter += 5;
+        }
+        //Nurse
+        if ($request['is_nurse'] == "yes") {
+            $risk_counter += 5;
+        }
+        //Symptom Change
+        if ($request['symptom_change'] > 2) {
+            $risk_counter += 5;
+        }
+
+        //return $risk_counter;
+
+
+        $request['symptom'] = json_encode($request['symptom']);
+        $request['extra_symptom'] = json_encode($request['extra_symptom']);
+        $request['pre_disease'] = json_encode($request['pre_disease']);
+        $request['score'] = $risk_counter;
+
+        try {
+            $result_id = Result::insertGetId($request->all());
+        } catch (Exception $exception) {
+
+            return $exception->getMessage();
+        }
+
+        if ($risk_counter > 50) {
+            $risk_valeu = "অত্যধিক ঝুঁকি ";
+        } else if ($risk_counter > 40) {
+            $risk_valeu = "মধ্যম ঝুঁকি";
+        } else {
+            $risk_valeu = "কম ঝুঁকি";
+        }
+
+
+        return view('common.test.submit')
+            ->with('result_id', $result_id)
+            ->with('result', $risk_valeu);
         // sympstom strat
-/*      1=শ্বাসকষ্ট;
-        2=শুকনা কাশি;
-        3=গলা ব্যথা;
-        4=অতি দুর্বলতা (যেমনঃ বাথরুমে যেতে অন্যের সাহায্যের প্রয়োজন হয় এমন);
-        5=অতি দুর্বলতা (যেসর্দি বা নাক দিয়ে পানি পড়া);*/
+        /*      1=শ্বাসকষ্ট;
+                2=শুকনা কাশি;
+                3=গলা ব্যথা;
+                4=অতি দুর্বলতা (যেমনঃ বাথরুমে যেতে অন্যের সাহায্যের প্রয়োজন হয় এমন);
+                5=অতি দুর্বলতা (যেসর্দি বা নাক দিয়ে পানি পড়া);*/
         //sympstom end
 
         // extrasymptom strat
-/*      1=পেট ব্যাথা, বমি বা পাতলা পায়খানা;
-        2=বুকে ব্যথা এবং চাপ অনুভব করা;
-        3=নাকে গন্ধ না পাওয়া;
-        4=স্বাদ না পাওয়া;
-        5=চোখ চুলকানো বা লাল হয়ে যাওয়া;
-        6=মাংশপেশি তে ব্যাথা;
-        7=তন্দ্রাচ্ছন্নভাব;
-        8=একটিও না;
-*/
+        /*      1=পেট ব্যাথা, বমি বা পাতলা পায়খানা;
+                2=বুকে ব্যথা এবং চাপ অনুভব করা;
+                3=নাকে গন্ধ না পাওয়া;
+                4=স্বাদ না পাওয়া;
+                5=চোখ চুলকানো বা লাল হয়ে যাওয়া;
+                6=মাংশপেশি তে ব্যাথা;
+                7=তন্দ্রাচ্ছন্নভাব;
+                8=একটিও না;
+        */
         //extrasymptom end
 
         // disease strat
@@ -70,10 +159,36 @@ class Controller extends BaseController
 
     }
 
-    public function home(){
+    public function home()
+    {
 
 
         return view('common.home.index');
 
+    }
+
+    public function testSave(Request $request)
+    {
+
+
+        $result_id = $request['result_id'];
+        $result = $request['result'];
+        unset($request['result_id']);
+        unset($request['_token']);
+        unset($request['result']);
+        if (is_null(Patient::where('patient_id', $request['patient_id'])->first())) {
+            try {
+                $id = Patient::insertGetId($request->all());
+            } catch (Exception $exception) {
+                return $exception->getMessage();
+            }
+
+
+            Result::where('result_id', $result_id)->update([
+                'patient_id' => $id
+            ]);
+
+        }
+        return view('common.test.answer')->with('result', $result);
     }
 }
