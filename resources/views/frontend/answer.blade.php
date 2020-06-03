@@ -45,10 +45,8 @@
 </nav>
 <div class="container " style="margin-top: 20px">
     <div class="row">
-        <div class="col-md-2">
 
-        </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mx-auto">
             <div class="container">
                 <div class="card p-4">
                     <h4 class="text-danger text-center">মধ্যম ঝুঁকি</h4>
@@ -116,9 +114,7 @@
             </div>
 
         </div>
-        <div class="col-md-2">
 
-        </div>
     </div>
 </div>
 

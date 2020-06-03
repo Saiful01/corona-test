@@ -11,15 +11,33 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/corona', function () {
     return view('frontend.index');
 });
-Route::get('/form', function () {
-    return view('frontend.form');
+
+
+
+Route::get('/', 'Controller@home');
+Route::get('/corona-test', function () {
+    return view('common.test.index');
 });
 Route::get('/answer', function () {
-    return view('frontend.answer');
+    return view('common.test.answer');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/form', 'Controller@coronaTest');
+
 
 
 Route::get('/login', 'AuthController@login');

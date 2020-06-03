@@ -7,11 +7,15 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use PhpParser\Node\Stmt\Return_;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function coronaTest(Request $request){
+
+       // return $request->all();
+        return view('common.test.submit');
         // sympstom strat
 /*      1=শ্বাসকষ্ট;
         2=শুকনা কাশি;
@@ -63,6 +67,13 @@ class Controller extends BaseController
         */
         //changesmyptom end
 
+
+    }
+
+    public function home(){
+
+
+        return view('common.home.index');
 
     }
 }
