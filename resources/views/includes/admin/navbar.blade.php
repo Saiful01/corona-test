@@ -37,8 +37,8 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Manage patient:</h6>
-                <a class="collapse-item" href="/admin/patient/show">Show patient</a>
-{{--                <a class="collapse-item" href="/order/create">New Order</a>--}}
+                <a class="collapse-item" href="/admin/patient/show">Show Patient</a>
+                <a class="collapse-item" href="/admin/patient/create">Add patient</a>
             </div>
         </div>
     </li>

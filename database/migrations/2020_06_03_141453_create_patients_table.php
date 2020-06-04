@@ -20,6 +20,9 @@ class CreatePatientsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('district')->nullable();
             $table->string('upazila')->nullable();
+            $table->unsignedBigInteger('employee_id')->nullable();
+            $table->unsignedBigInteger('dealer_id')->nullable();
+            $table->string('area')->nullable();
             $table->timestamps();
         });
     }

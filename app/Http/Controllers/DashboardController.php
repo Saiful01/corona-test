@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Patient;
 use App\Result;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
@@ -53,6 +54,21 @@ class DashboardController extends Controller
         $result = Patient::orderBy('patients.created_at', "DESC")
             ->get();
         return view('admin.patient.show')->with('result', $result);
+    }
+    public function patientCreate()
+    {
+        return view('admin.patient.create');
+    }
+    public function patientSave( Request $request)
+    {
+        unset($request['_token']);
+        try {
+            Patient::create($request->all());
+            return back()->with('success', "Successfully Saved");
+        }
+        catch (\Exception $exception){
+            return back()->with('failed', $exception->getMessage());
+        }
     }
 
     public function patientDetails($id)

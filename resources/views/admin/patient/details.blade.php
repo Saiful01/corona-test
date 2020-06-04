@@ -46,7 +46,9 @@
                                 @php($i=1)
                                 @foreach($results as $res)
 
-                                    <td>{{$res->temperature}}</td>
+                                    <td>{{$res->temperature}}
+
+                                    </td>
                                     <td>
 
                                         <?php
@@ -67,7 +69,7 @@
                                         $items = json_decode($res->extra_symptom);
                                         if ($items!=null) {
                                             foreach ($items as $item) {
-                                                echo $item;
+                                                echo gettingExtraSympTomIdtoValue($item);
                                                 echo "<br>";
                                             }
                                         }
@@ -76,7 +78,19 @@
 
                                     </td>
                                     <td>{{$res->disease}}</td>
-                                    <td>{{$res->pre_disease}}</td>
+                                    <td>
+                                        <?php
+                                        $items = json_decode($res->pre_disease);
+                                        if ($items!=null) {
+                                            foreach ($items as $item) {
+                                                echo gettingPreDiseaseIdtoValue($item);
+                                                echo "<br>";
+                                            }
+                                        }
+
+                                        ?>
+
+                                    </td>
                                     <td>{{$res->is_smoker}}</td>
                                     <td>{{$res->is_nurse}}</td>
                                     <td>{{$res->symptom_change}}</td>
