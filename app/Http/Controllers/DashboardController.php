@@ -50,8 +50,7 @@ class DashboardController extends Controller
 
     public function patientShow()
     {
-        $result = Result::join('patients', 'patients.patient_id', '=', 'results.patient_id')
-            ->orderBy('results.created_at', "DESC")
+        $result = Patient::orderBy('results.created_at', "DESC")
             ->get();
         return view('admin.patient.show')->with('result', $result);
     }
