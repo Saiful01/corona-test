@@ -6,6 +6,7 @@ use App\Patient;
 use App\Result;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -22,14 +23,32 @@ class DashboardController extends Controller
     public function dashboard()
     {
 
+        $result = Patient::orderBy('patients.created_at', "DESC")
+            ->limit(10)->get();
+
 
         $total = Patient::count();
-        $high_risk = Result::where('score', '>=', '50')->count();
-        $Medium_risk = Result::where('score', '>=', '40')->count();
-        $little_risk = Result::where('score', '<', '40')->count();
+        $high_risk = Result::where('score', '>=', '45')->count();
+      $Medium_risk = Result::where('score', '>=', '35')->count();
+
+        $little_risk = Result::where('score', '<', '30')->count();
         $female_count = Result::where('gender', 'female')->count();
         $male_count = Result::where('gender', 'male')->count();
         $other_count = Result::where('gender', 'other')->count();
+        $today_count = Result::whereDate('created_at', Carbon::today())->count();
+        $today_low_count = Result::whereDate('created_at', Carbon::today())
+            ->select('score', '>', '30')->count();
+         $today_medium_count = Result::select('score', '>', '35')
+        ->whereDate('created_at', Carbon::today())->count();
+          $today_high_count = Result::select('score', '>', '45')
+        ->whereDate('created_at', Carbon::today())->count();
+        $today_male_count = Result::select('gender', 'male')
+        ->whereDate('created_at', Carbon::today())->count();
+        $today_female_count = Result::select('gender', 'female')
+        ->whereDate('created_at', Carbon::today())->count();
+
+
+
 
 
          $histories = Result::selectRaw('date(created_at) date, count(*) count')
@@ -54,6 +73,13 @@ class DashboardController extends Controller
             ->with('male_count', $male_count)
             ->with('other_count', $other_count)
             ->with('histories', $histories)
+            ->with('today_count', $today_count)
+            ->with('today_low_count', $today_low_count)
+            ->with('today_medium_count', $today_medium_count)
+            ->with('today_high_count', $today_high_count)
+            ->with('today_male_count', $today_male_count)
+            ->with('today_female_count', $today_female_count)
+            ->with('result', $result)
             ->with('total', $total);
 
     }
