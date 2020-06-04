@@ -29,13 +29,29 @@ class DashboardController extends Controller
         $other_count = Result::where('gender', 'other')->count();
 
 
+        $histories = Result::selectRaw('date(created_at) date, count(*) count')
+            ->groupBy('date')
+            ->limit(15)
+            ->orderByDesc('date')
+            ->get();
+
+    /*    foreach ($histories as $item){
+
+            echo $item->count;
+            echo "<br>";
+        }
+        return;*/
+
+
         return view('admin.dashboard.index')
             ->with('high_risk', $high_risk)
             ->with('Medium_risk', $Medium_risk)
             ->with('little_risk', $little_risk)
+
             ->with('female_count', $female_count)
             ->with('male_count', $male_count)
             ->with('other_count', $other_count)
+            ->with('histories', $histories)
             ->with('total', $total);
 
     }
