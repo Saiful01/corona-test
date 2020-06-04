@@ -2,9 +2,9 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
-        <div class="sidebar-brand-icon rotate-n-15">
+        {{--<div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
-        </div>
+        </div>--}}
         <div class="sidebar-brand-text mx-3">Corona Test<sup></sup></div>
     </a>
 
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+ {{--   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -36,21 +36,26 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage patient:</h6>
+                <h6 class="collapse-header">Manage Patient:</h6>
                 <a class="collapse-item" href="/admin/patient/show">Show Patient</a>
-                <a class="collapse-item" href="/admin/patient/create">Add patient</a>
             </div>
         </div>
-    </li>
+    </li>--}}
 
+    <li class="nav-item">
+
+        <a class="nav-link" href="/admin/patient/show">
+            <i class="fas fa-user-md fa-chart-area"></i>
+            <span>Show Patient</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Manage Clients
+        Manage Employees
     </div>
-
+{{--
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClients"
            aria-expanded="true" aria-controls="collapseClients">
@@ -65,13 +70,14 @@
                 <a class="collapse-item" href="/client/create">New Client</a>
             </div>
         </div>
-    </li>
-
-   {{-- <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Clients</span></a>
     </li>--}}
+
+    <li class="nav-item">
+
+        <a class="nav-link" href="/admin/patient/create">
+            <i class="fas fa-user fa-chart-area"></i>
+            <span>Add Employee</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

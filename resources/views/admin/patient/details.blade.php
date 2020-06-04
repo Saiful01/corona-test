@@ -3,18 +3,22 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Patient Details</h1>
-
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Patient</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Patient Deatils</h6>
                     </div>
                     <div class="card-body">
 
-                        {{$patient->name}}
+                        <strong>Employee Id:</strong> {{$patient->employee_id}}<br>
+                        <strong>Dealer Id:</strong> {{$patient->dealer_id}}<br>
+                        <strong>Name:</strong> {{$patient->name}}<br>
+                        <strong>Email:</strong> {{$patient->email}}<br>
+                        <strong>Phone:</strong> {{$patient->phone}}<br>
+                        <strong>District:</strong> {{$patient->district}}<br>
+                        <strong>Upazila:</strong> {{$patient->upazila}}<br>
+                        <strong>Area:</strong> {{$patient->area}}<br>
                     </div>
                 </div>
             </div>
@@ -30,23 +34,25 @@
                                style="width: 100%;">
                             <thead>
                             <tr>
+                                <th>Date</th>
                                 <th>Temperature</th>
                                 <th>Symptom</th>
                                 <th>Extra symptom</th>
-                                <th>Disease</th>
-                                <th> Pre Disease</th>
-                                <th> Is Smoker</th>
-                                <th> IS Nurse</th>
-                                <th> Symptom Change</th>
-                                <th> Result</th>
+                                <th>Travel History</th>
+                                <th>Pre-Disease</th>
+                                <th>Smoker</th>
+                                <th>Nurse</th>
+                                <th>Symptom Change</th>
+                                <th>Result</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
+
                                 @php($i=1)
                                 @foreach($results as $res)
-
-                                    <td>{{$res->temperature}}
+                                    <td>{{$res->created_at}}</td>
+                                    <td>{{gettingTemperatureIdtoValue($res->temperature)}}
 
                                     </td>
                                     <td>
@@ -77,7 +83,7 @@
                                         ?>
 
                                     </td>
-                                    <td>{{$res->disease}}</td>
+                                    <td>{{gettingDiseaseIdtoValue($res->disease)}}</td>
                                     <td>
                                         <?php
                                         $items = json_decode($res->pre_disease);
@@ -93,7 +99,7 @@
                                     </td>
                                     <td>{{$res->is_smoker}}</td>
                                     <td>{{$res->is_nurse}}</td>
-                                    <td>{{$res->symptom_change}}</td>
+                                    <td>{{gettingSympTomChangeIdtoValue($res->symptom_change)}}</td>
                                     <td>
                                         <?php
                                         $score = $res->score
@@ -108,6 +114,7 @@
                                         @endif
 
                                     </td>
+
 
 
                             </tr>

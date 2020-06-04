@@ -3,8 +3,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+       {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>--}}
     </div>
 
     <!-- Content Row -->
@@ -22,7 +22,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$high_risk}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class="fas fa-user-md fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$Medium_risk}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-user fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-user-md fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$total}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-list fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -171,6 +171,7 @@
         </div>
     </div>
 
+{{--
     <!-- Content Row -->
     <div class="row">
 
@@ -308,6 +309,7 @@
 
         </div>
     </div>
+--}}
 
     <!-- Page level plugins -->
     <script src="/assets/vendor/chart.js/Chart.min.js"></script>
@@ -421,7 +423,7 @@
             data: {
                 labels: [<?php foreach ($histories as $history){ echo $history->date.','; }?>],
                 datasets: [{
-                    label: "Earnings",
+                    label: "Tested: ",
                     lineTension: 0.3,
                     backgroundColor: "rgba(78, 115, 223, 0.05)",
                     borderColor: "rgba(78, 115, 223, 1)",
@@ -497,7 +499,7 @@
                     callbacks: {
                         label: function(tooltipItem, chart) {
                             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+                            return datasetLabel +  number_format(tooltipItem.yLabel);
                         }
                     }
                 }

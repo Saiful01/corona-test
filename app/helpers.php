@@ -3,7 +3,10 @@
 function getScore($id)
 {
 
-    $data= \App\Result::where('patient_id',$id)->orderBy('created_at','DESC')->first();
+    $data = \App\Result::where('patient_id', $id)->orderBy('created_at', 'DESC')->first();
+    if(is_null($data)){
+        return 420;
+    }
     return $data->score;
 }
 
@@ -16,10 +19,12 @@ function gettingSympTomIdtoValue($id)
         'গলা ব্যথা',
         'অতি দুর্বলতা',
         'সর্দি বা নাক দিয়ে পানি পড়া',
+        'একটিও না',
     ];
 
     return $array[$id];
 }
+
 function gettingExtraSympTomIdtoValue($id)
 {
     $array = [
@@ -36,13 +41,14 @@ function gettingExtraSympTomIdtoValue($id)
 
     return $array[$id];
 }
+
 function gettingPreDiseaseIdtoValue($id)
 {
     $array = [
         '',
         'ফুসফুসের সমস্য',
         'ক্যান্সার',
-        'ডনির সমস্যা',
+        'কিডনির সমস্যা',
         'ডায়াবেটিস',
         'হৃদরোগের সমস্যা',
         'উচ্চ রক্ত চাপ',
@@ -51,6 +57,7 @@ function gettingPreDiseaseIdtoValue($id)
 
     return $array[$id];
 }
+
 function gettingTemperatureIdtoValue($id)
 {
     $array = [
@@ -64,6 +71,7 @@ function gettingTemperatureIdtoValue($id)
 
     return $array[$id];
 }
+
 function gettingDiseaseIdtoValue($id)
 {
     $array = [
@@ -90,6 +98,7 @@ function gettingDiseaseIdtoValue($id)
 
     return $array[$id];
 }
+
 function gettingSympTomChangeIdtoValue($id)
 {
     $array = [

@@ -45,7 +45,10 @@
 
 
                                     ?>
-                                    @if($score >50)
+                                    @if($score==420)
+                                            <span class="badge badge-pill badge-danger"> Not Taken</span>
+
+                                    @elseif($score >50)
                                         <span class="badge badge-pill badge-danger">অত্যধিক ঝুঁকি</span>
                                     @elseif($score >40)
                                         <span class="badge badge-pill badge-info">মধ্যম ঝুঁকি</span>
