@@ -96,9 +96,9 @@ class Controller extends BaseController
             return $exception->getMessage();
         }
 
-        if ($risk_counter > 50) {
+        if ($risk_counter > 45) {
             $risk_valeu = "অত্যধিক ঝুঁকি ";
-        } else if ($risk_counter > 40) {
+        } else if ($risk_counter > 35) {
             $risk_valeu = "মধ্যম ঝুঁকি";
         } else {
             $risk_valeu = "কম ঝুঁকি";
@@ -181,19 +181,24 @@ class Controller extends BaseController
         unset($request['result_id']);
         unset($request['_token']);
         unset($request['result']);
-        if (is_null(Patient::where('patient_id', $request['patient_id'])->first())) {
+
+
+        $is_exist = Patient::where('phone', $request['phone'])->first();
+
+
+        if (is_null($is_exist)) {
             try {
                 $id = Patient::insertGetId($request->all());
             } catch (Exception $exception) {
                 return $exception->getMessage();
             }
-
-
-            Result::where('result_id', $result_id)->update([
-                'patient_id' => $id
-            ]);
-
+        } else {
+            $id = $is_exist->patient_id;
         }
+
+        Result::where('result_id', $result_id)->update([
+            'patient_id' => $id
+        ]);
         return view('common.test.answer')->with('result', $result);
     }
 

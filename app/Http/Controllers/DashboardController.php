@@ -20,23 +20,23 @@ class DashboardController extends Controller
     {
 
 
-       $total= Patient::count();
-       $high_risk=Result::where( 'score' ,'>', '50')->count();
-       $Medium_risk=Result::where( 'score' ,'>', '40')->count();
-       $little_risk=Result::where( 'score' ,'<=', '40')->count();
-      $female_count=Result::where( 'gender' ,'female')->count();
-    $male_count=Result::where( 'gender' ,'male')->count();
-      $other_count=Result::where( 'gender' ,'other')->count();
+        $total = Patient::count();
+        $high_risk = Result::where('score', '>=', '50')->count();
+        $Medium_risk = Result::where('score', '>=', '40')->count();
+        $little_risk = Result::where('score', '<', '40')->count();
+        $female_count = Result::where('gender', 'female')->count();
+        $male_count = Result::where('gender', 'male')->count();
+        $other_count = Result::where('gender', 'other')->count();
 
 
         return view('admin.dashboard.index')
-            ->with('high_risk',$high_risk)
-            ->with('Medium_risk',$Medium_risk)
-            ->with('little_risk',$little_risk)
-            ->with('female_count',$female_count)
-            ->with('male_count',$male_count)
-            ->with('other_count',$other_count)
-            ->with('total',$total);
+            ->with('high_risk', $high_risk)
+            ->with('Medium_risk', $Medium_risk)
+            ->with('little_risk', $little_risk)
+            ->with('female_count', $female_count)
+            ->with('male_count', $male_count)
+            ->with('other_count', $other_count)
+            ->with('total', $total);
 
     }
 
@@ -50,7 +50,7 @@ class DashboardController extends Controller
 
     public function patientShow()
     {
-        $result = Patient::orderBy('results.created_at', "DESC")
+        $result = Patient::orderBy('patients.created_at', "DESC")
             ->get();
         return view('admin.patient.show')->with('result', $result);
     }
@@ -58,9 +58,9 @@ class DashboardController extends Controller
     public function patientDetails($id)
     {
 
-
-         $results = Result::where('patient_id', $id)->first();
-
+        $results = Result::where('patient_id', $id)->get();
+        $patient = Patient::where('patient_id', $id)->first();
+/*
         $items = $results[1]->symptom;
         $items = json_decode($items);
 
@@ -76,8 +76,9 @@ class DashboardController extends Controller
             return $items = $res->symptom;
 
 
-        }
+        }*/
         return view('admin.patient.details')
-            ->with('results',$results);
+            ->with('results', $results)
+            ->with('patient', $patient);
     }
 }
