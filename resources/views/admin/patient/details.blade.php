@@ -15,6 +15,7 @@
                     <div class="card-body">
 
                         {{$patient->name}}
+
                     </div>
                 </div>
             </div>
