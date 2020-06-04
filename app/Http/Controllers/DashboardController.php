@@ -71,6 +71,27 @@ class DashboardController extends Controller
             ->get();
         return view('admin.patient.show')->with('result', $result);
     }
+
+    public function patientFilter(Request $request)
+    {
+
+
+        $query=Patient::orderBy('patients.created_at', "DESC");
+        if($request['district'] !="All"){
+            $query->where('district', $request['district']);
+        }
+
+        if($request['status'] !="All"){
+            $query->where('hhhhh', $request['status']);
+        }
+
+        $result= $query->get();
+
+        return view('admin.patient.show')->with('result', $result);
+    }
+
+
+
     public function patientCreate()
     {
         return view('admin.patient.create');
