@@ -83,9 +83,25 @@ class DashboardController extends Controller
             $query->where('district', $request['district']);
         }
 
-        if($request['status'] !="All"){
-            $query->where('hhhhh', $request['status']);
-        }
+/*        if($request['status'] !="All"){
+            if ($request['status']== 1){
+                $query->where('score','>', 45, $request['status']);
+
+            }
+            elseif ($request['status']== 2){
+                $query->where('score','>', 30, $request['status']);
+
+            }
+            elseif ($request['status']== 3){
+                $query->where('score','<', 30, $request['status']);
+
+            }
+            else {
+                $query->whereNull('score');
+
+            }
+            $query->where('score', $request['status']);
+        }*/
 
         $result= $query->get();
 
