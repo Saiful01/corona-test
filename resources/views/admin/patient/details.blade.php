@@ -10,7 +10,6 @@
                         <h6 class="m-0 font-weight-bold text-primary">Patient Deatils</h6>
                     </div>
                     <div class="card-body">
-
                         <strong>Employee Id:</strong> {{$patient->employee_id}}<br>
                         <strong>Dealer Id:</strong> {{$patient->dealer_id}}<br>
                         <strong>Name:</strong> {{$patient->name}}<br>
@@ -19,6 +18,7 @@
                         <strong>District:</strong> {{$patient->district}}<br>
                         <strong>Upazila:</strong> {{$patient->upazila}}<br>
                         <strong>Area:</strong> {{$patient->area}}<br>
+
                     </div>
                 </div>
             </div>

@@ -91,7 +91,7 @@
                                 @endif
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Add Patient</h1>
+                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold ">Add Patient</h1>
                                     </div>
                                     <form action="/admin/patient/save" method="post">
                                         <div class="form-group row">
@@ -113,6 +113,21 @@
                                                 <input type="text" class="form-control" name="phone" required>
                                             </div>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Employee Id</label>
+                                            <div class="col-sm-9">
+
+                                                <input type="number" class="form-control" id="inputEmail3" name="employee_id">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dealer Id</label>
+                                            <div class="col-sm-9">
+
+                                                <input type="number" class="form-control" id="inputEmail3" name="dealer_id">
+                                            </div>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="inputPassword3" class="col-sm-3 col-form-label">Zila</label>
                                             <div class="col-sm-9">
@@ -129,20 +144,6 @@
                                             <div class="col-sm-9">
 
                                                 <input type="text" class="form-control" id="inputEmail3" name="upazila">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Employee Id</label>
-                                            <div class="col-sm-9">
-
-                                                <input type="number" class="form-control" id="inputEmail3" name="employee_id">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dealer Id</label>
-                                            <div class="col-sm-9">
-
-                                                <input type="number" class="form-control" id="inputEmail3" name="dealer_id">
                                             </div>
                                         </div>
                                         <div class="form-group row">

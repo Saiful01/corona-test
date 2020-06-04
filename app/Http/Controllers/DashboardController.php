@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Patient;
 use App\Result;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 class DashboardController extends Controller
@@ -74,15 +76,32 @@ class DashboardController extends Controller
     public function patientFilter(Request $request)
     {
 
+        //return $request->all();
 
         $query=Patient::orderBy('patients.created_at', "DESC");
         if($request['district'] !="All"){
             $query->where('district', $request['district']);
         }
 
-        if($request['status'] !="All"){
-            $query->where('hhhhh', $request['status']);
-        }
+/*        if($request['status'] !="All"){
+            if ($request['status']== 1){
+                $query->where('score','>', 45, $request['status']);
+
+            }
+            elseif ($request['status']== 2){
+                $query->where('score','>', 30, $request['status']);
+
+            }
+            elseif ($request['status']== 3){
+                $query->where('score','<', 30, $request['status']);
+
+            }
+            else {
+                $query->whereNull('score');
+
+            }
+            $query->where('score', $request['status']);
+        }*/
 
         $result= $query->get();
 
@@ -132,5 +151,25 @@ class DashboardController extends Controller
         return view('admin.patient.details')
             ->with('results', $results)
             ->with('patient', $patient);
+    }
+
+    public function passwordchange(){
+        return view('admin.password_update')->with('result', User::where('id', Auth::id())->first());;
+
+    }
+    public function passwordUpdate(Request $request){
+        try {
+            unset($request['_token']);
+            $request['password'] = Hash::make($request['password']);
+
+            User::where('id', $request['id'])->update([
+                'password' => $request['password']
+            ]);
+
+            return back()->with('success', "Successfully Updated Your Password");
+        } catch (\Exception $exception) {
+
+            return back()->with('success', $exception->getMessage());
+        }
     }
 }
