@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Patient;
 use App\Result;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 class DashboardController extends Controller
@@ -30,13 +32,29 @@ class DashboardController extends Controller
         $other_count = Result::where('gender', 'other')->count();
 
 
+        $histories = Result::selectRaw('date(created_at) date, count(*) count')
+            ->groupBy('date')
+            ->limit(15)
+            ->orderByDesc('date')
+            ->get();
+
+    /*    foreach ($histories as $item){
+
+            echo $item->count;
+            echo "<br>";
+        }
+        return;*/
+
+
         return view('admin.dashboard.index')
             ->with('high_risk', $high_risk)
             ->with('Medium_risk', $Medium_risk)
             ->with('little_risk', $little_risk)
+
             ->with('female_count', $female_count)
             ->with('male_count', $male_count)
             ->with('other_count', $other_count)
+            ->with('histories', $histories)
             ->with('total', $total);
 
     }
@@ -96,5 +114,25 @@ class DashboardController extends Controller
         return view('admin.patient.details')
             ->with('results', $results)
             ->with('patient', $patient);
+    }
+
+    public function passwordchange(){
+        return view('admin.password_update')->with('result', User::where('id', Auth::id())->first());;
+
+    }
+    public function passwordUpdate(Request $request){
+        try {
+            unset($request['_token']);
+            $request['password'] = Hash::make($request['password']);
+
+            User::where('id', $request['id'])->update([
+                'password' => $request['password']
+            ]);
+
+            return back()->with('success', "Successfully Updated Your Password");
+        } catch (\Exception $exception) {
+
+            return back()->with('success', $exception->getMessage());
+        }
     }
 }

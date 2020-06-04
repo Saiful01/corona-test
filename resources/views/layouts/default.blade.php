@@ -27,17 +27,29 @@
     <link rel="stylesheet" href="/css/custom.css">
 
     <style>
-
-        @media (max-width: 320px) {
-            .dhumpan {
-                padding-top: 210px;
-
-            }
-        }
-
         .dhumpan {
             padding-top: 90px;
         }
+        #disease{
+            padding-top: 130px;
+        }
+
+        #extra_symptom{
+            padding-top: 130px;
+        }
+        @media (max-width: 480px) {
+
+            .dhumpan {
+                padding-top: 156px;
+            }
+            #disease{
+                padding-top: 224px;
+            }
+            #extra_symptom{
+                padding-top: 186px;
+            }
+        }
+
 
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
             display: none !important;
@@ -304,17 +316,17 @@
 
 
         document.getElementById('age').style.display = 'block';
-        document.getElementById('gender').style.display = 'none';
-        document.getElementById('is_pregnant').style.display = 'none';
-        document.getElementById('temperature').style.display = 'none';
-        document.getElementById('symptom').style.display = 'none';
-        document.getElementById('extra_symptom').style.display = 'none';
-        document.getElementById('disease').style.display = 'none';
-        document.getElementById('pre_disease').style.display = 'none';
-        document.getElementById('is_smoker').style.display = 'none';
-        document.getElementById('is_nurse').style.display = 'none';
-        document.getElementById('symptom_change').style.display = 'none';
-        document.getElementById('submit').style.display = 'none';
+        document.getElementById('gender').style.display = 'block';
+        document.getElementById('is_pregnant').style.display = 'block';
+        document.getElementById('temperature').style.display = 'block';
+        document.getElementById('symptom').style.display = 'block';
+        document.getElementById('extra_symptom').style.display = 'block';
+        document.getElementById('disease').style.display = 'block';
+        document.getElementById('pre_disease').style.display = 'block';
+        document.getElementById('is_smoker').style.display = 'block';
+        document.getElementById('is_nurse').style.display = 'block';
+        document.getElementById('symptom_change').style.display = 'block';
+        document.getElementById('submit').style.display = 'block';
 
         console.log("App");
 

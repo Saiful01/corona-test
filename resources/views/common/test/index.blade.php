@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Page Title')
+@section('title', 'Test')
 
 @section('content')
 
@@ -153,7 +153,7 @@
 
                                 </div>
 
-                                <div ng-cloak id="extra_symptom" style=" padding-top: 130px;">
+                                <div ng-cloak id="extra_symptom" style="">
                                     <div class="name">
                                         <p class="test-paragraph">অতিরিক্ত কি কি লক্ষণ আপনার রয়েছে?</p>
                                     </div>
@@ -198,7 +198,7 @@
                                     </div>
 
                                 </div>
-                                <div ng-cloak id="disease" style=" padding-top: 130px;">
+                                <div ng-cloak id="disease">
                                     <div class="name">
                                         <p class="test-paragraph">আপনার ভ্রমণ এর বিস্তারিত তথ্য দিন</p>
                                     </div>

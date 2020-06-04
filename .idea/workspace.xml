@@ -19,12 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f54c05a-72de-47d0-a711-2e99d3da4849" name="Default Changelist" comment="">
+    <list default="true" id="d99e2f4f-5619-46fc-aebe-e728e3c9a081" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-login.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_03_141453_create_patients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_03_141453_create_patients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/patient/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/patient/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/patient/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/patient/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/common/test/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/common/test/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/admin/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/admin/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,17 +147,30 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
     </include_path>
   </component>
+  <component name="ProjectId" id="1crO5ZglQsZWZgkzzIKG6qKPzS5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../explore-limitless" />
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8f54c05a-72de-47d0-a711-2e99d3da4849" name="Default Changelist" comment="" />
+      <changelist id="d99e2f4f-5619-46fc-aebe-e728e3c9a081" name="Default Changelist" comment="" />
       <created>1577968608149</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -170,14 +200,30 @@
       <workItem from="1591183148771" duration="955000" />
       <workItem from="1591188033927" duration="8592000" />
       <workItem from="1591197564652" duration="4586000" />
-      <workItem from="1591256862802" duration="2858000" />
+      <workItem from="1591256862802" duration="3012000" />
+      <workItem from="1591274507620" duration="5074000" />
+      <workItem from="1591283096283" duration="4726000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="530" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591284343519">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1591284343519" />
+    <state x="580" y="183" key="FileChooserDialogImpl" timestamp="1591284506010">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="183" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1591284506010" />
+    <state x="456" y="71" width="670" height="676" key="search.everywhere.popup" timestamp="1591282548596">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="71" width="670" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1591282548596" />
   </component>
 </project>
