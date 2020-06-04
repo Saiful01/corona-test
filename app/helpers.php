@@ -1,11 +1,13 @@
 <?php
 
+use Carbon\Carbon;
+
 function getScore($id)
 {
 
     $data = \App\Result::where('patient_id', $id)->orderBy('created_at', 'DESC')->first();
     if(is_null($data)){
-        return 420;
+        return 0;
     }
     return $data->score;
 }
@@ -112,4 +114,10 @@ function gettingSympTomChangeIdtoValue($id)
     return $array[$id];
 }
 
+function dateFormat($date)
+{
+
+    $createdAt = Carbon::parse($date);
+    return $createdAt->format('d M');
+}
 ?>

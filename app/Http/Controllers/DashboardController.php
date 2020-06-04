@@ -30,18 +30,17 @@ class DashboardController extends Controller
         $other_count = Result::where('gender', 'other')->count();
 
 
-        $histories = Result::selectRaw('date(created_at) date, count(*) count')
+         $histories = Result::selectRaw('date(created_at) date, count(*) count')
             ->groupBy('date')
-            ->limit(15)
+            ->limit(7)
             ->orderByDesc('date')
             ->get();
-
-    /*    foreach ($histories as $item){
-
-            echo $item->count;
-            echo "<br>";
+        foreach ($histories as $history){
+            $history->date=dateFormat($history->date);
         }
-        return;*/
+
+       // return $histories;
+
 
 
         return view('admin.dashboard.index')

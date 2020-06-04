@@ -98,7 +98,7 @@ class Controller extends BaseController
 
         if ($risk_counter > 45) {
             $risk_valeu = "অত্যধিক ঝুঁকি ";
-        } else if ($risk_counter > 35) {
+        } else if ($risk_counter > 30) {
             $risk_valeu = "মধ্যম ঝুঁকি";
         } else {
             $risk_valeu = "কম ঝুঁকি";
