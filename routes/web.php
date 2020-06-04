@@ -37,6 +37,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/dashboard', 'DashboardController@dashboard');
     Route::get('/patient/show', 'DashboardController@patientShow');
     Route::get('/patient/details/{id}', 'DashboardController@patientDetails');
+    Route::get('/patient/create', 'DashboardController@patientCreate');
+    Route::post('/patient/save', 'DashboardController@patientSave');
 
 /*
     Route::get('/dashboard', 'DashboardController@dashboard');*/

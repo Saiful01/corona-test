@@ -101,15 +101,11 @@
                                                value="1"> শরীরের
                                         তাপমাত্রা স্বাভাবিক আছে 96°F-98.6°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="2"> শরীরের
-                                        তাপমাত্রা স্বাভাবিক আছে
-                                        98°F-100.6°F<br>
+                                               value="2"> শরীরের তাপমাত্রা স্বাভাবিক আছে 98°F-100.6°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="3"> জ্বর
-                                        98.6°F-102°F<br>
+                                               value="3"> জ্বর 98.6°F-102°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="4"> অনেক জ্বর
-                                        >102°F<br>
+                                               value="4"> অনেক জ্বর >102°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
                                                value="5"> জানি না
 
@@ -144,6 +140,9 @@
                                         <label class="float-left">
                                             <input type="checkbox" name="symptom[]" value="5">সর্দি বা নাক দিয়ে পানি
                                             পড়া
+                                        </label>
+                                        <label class="float-left">
+                                            <input type="checkbox" name="symptom[]" value="6">একটিও না
                                         </label>
                                     </div>
                                     <div class=" float-right">
@@ -256,6 +255,9 @@
                                         <label class="float-left">
                                             <input type="checkbox" name="pre_disease[]" value="6">উচ্চ রক্ত চাপ
                                         </label>
+                                        <label class="float-left">
+                                            <input type="checkbox" name="pre_disease[]" value="7">একটিও না
+                                        </label>
                                     </div>
                                     <div class=" float-right">
                                         <button type="button" class="btn btn-primary" ng-click="preDiseaseChange()">
@@ -300,17 +302,13 @@
                                     <div class="radio">
 
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="1"> কোন
-                                        পরিবর্তন নাই
+                                               value="1"> কোন পরিবর্তন নাই
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="3"> অনেক বেশী
-                                        খারাপ
+                                               value="3"> অনেক বেশী খারাপ
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="4"> আরও খারাপ
-                                        হয়েছে
+                                               value="4"> আরও খারাপ হয়েছে
                                         <input type="radio" name="symptom_change" ng-click="symptomChnageChange()"
-                                               value="2"> আগের থেকে
-                                        ভালো
+                                               value="2"> আগের থেকে ভালো
 
 
                                     </div>
