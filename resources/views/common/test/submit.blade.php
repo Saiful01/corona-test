@@ -136,7 +136,7 @@
                                     <label for="inputPassword3" class="col-sm-3 col-form-label">উপজেলা</label>
                                     <div class="col-sm-9">
 
-                                        <input type="email" class="form-control" id="inputEmail3" name="upazila">
+                                        <input type="text" class="form-control" id="inputEmail3" name="upazila">
                                     </div>
                                 </div>
 
