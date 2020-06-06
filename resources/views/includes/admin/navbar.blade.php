@@ -27,26 +27,26 @@
     </div>
 
     <!-- Nav Item - Utilities Collapse Menu -->
- {{--   <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Manage patient</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage Patient:</h6>
-                <a class="collapse-item" href="/admin/patient/show">Show Patient</a>
-            </div>
-        </div>
-    </li>--}}
+    {{--   <li class="nav-item">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+              aria-expanded="true" aria-controls="collapseUtilities">
+               <i class="fas fa-fw fa-wrench"></i>
+               <span>Manage patient</span>
+           </a>
+           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <h6 class="collapse-header">Manage Patient:</h6>
+                   <a class="collapse-item" href="/admin/patient/show">Show Patient</a>
+               </div>
+           </div>
+       </li>--}}
 
     <li class="nav-item">
 
         <a class="nav-link" href="/admin/patient/show">
             <i class="fas fa-user-md fa-chart-area"></i>
-            <span>Show Patient</span></a>
+            <span>Total Test</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -55,28 +55,42 @@
     <div class="sidebar-heading">
         Manage Employees
     </div>
-{{--
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClients"
-           aria-expanded="true" aria-controls="collapseClients">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Manage Clients</span>
-        </a>
-        <div id="collapseClients" class="collapse" aria-labelledby="headingUtilities"
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage Clients:</h6>
-                <a class="collapse-item" href="/client/show">Show Client</a>
-                <a class="collapse-item" href="/client/create">New Client</a>
+    {{--
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClients"
+               aria-expanded="true" aria-controls="collapseClients">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Manage Clients</span>
+            </a>
+            <div id="collapseClients" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Manage Clients:</h6>
+                    <a class="collapse-item" href="/client/show">Show Client</a>
+                    <a class="collapse-item" href="/client/create">New Client</a>
+                </div>
             </div>
-        </div>
-    </li>--}}
+        </li>--}}
 
     <li class="nav-item">
 
         <a class="nav-link" href="/admin/patient/create">
             <i class="fas fa-user fa-chart-area"></i>
             <span>Add Employee</span></a>
+    </li>
+
+    <li class="nav-item">
+
+        <a class="nav-link" href="/admin/dealers">
+            <i class="fas fa-user fa-chart-area"></i>
+            <span>Dealers</span></a>
+    </li>
+
+    <li class="nav-item">
+
+        <a class="nav-link" href="/admin/emplyees">
+            <i class="fas fa-user fa-chart-area"></i>
+            <span>Employee</span></a>
     </li>
 
     <!-- Divider -->

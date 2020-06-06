@@ -1,7 +1,4 @@
-@extends('layouts.default')
-
-@section('title', 'Page Title')
-
+@extends('layouts.admin')
 @section('content')
 
 
@@ -74,193 +71,104 @@
     );
 
     ?>
-
-
-    <!-- symptoms-section -->
-    <section class="symptoms-section" id="symptoms">
-        <div class="auto-container" ng-controller="submitCtrl">
-
-
-            <div class="row">
-
-                <div class="col-md-7 mx-auto">
-
-
-                    <div class="card">
-                        <div class="card-body">
-                            @if(!isset($_GET['status']))
-                                <p>আপনার ঝুঁকি টেস্ট সম্পর্ন হয়েছে। ফলাফল দেখতে নিচের ফর্মটি পুরন করুন। ধন্যবাদ</p>
-                            @endif
-
-
-                            <p>আপনার তথ্যগুলো যথাযথ কর্তৃপক্ষের কাছে জানানোর জন্য নিচের ফরমটি পূরণ করে সাবমিট বাটনে
-                                ক্লিক করুন।
-                                আপনার সকল তথ্য গোপন রাখা হবে।</p>
-
-                        </div>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Patient Search</h6>
                     </div>
-                    <br>
+                    <div class="card-body">
+                        <form action="/admin/dealers" method="post">
 
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="/corona-test/result" method="post">
 
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">টাইপ</label>
-                                    <div class="col-sm-9">
-                                        <select id="inputState" class="form-control" name="type" ng-model="type"
-                                                ng-click="ageChange()">
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Employee Type</label>
+                                <div class="col-sm-4">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                    <select id="inputState" class="form-control" name="employee_type">
+                                        <option value="1">All</option>
 
-                                            <option value="0">নির্বাচন করুন</option>
-                                            <option value="1">ডিলার</option>
-                                            <option value="2">এমপ্লয়ি</option>
+                                        <option value="2">Work From Home</option>
+                                        <option value="3">Work From Office</option>
 
-                                        </select>
+                                    </select>
 
-                                    </div>
                                 </div>
 
-                                <div id="employee_id">
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label"> আইডি</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="employee_id">
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary">Search</button>
 
-                                        </div>
-                                    </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">নাম</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputEmail3" name="name" required>
-                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                        <input type="hidden" name="result_id" value="{{$result_id}}">
-                                        <input type="hidden" name="result" value="{{$result}}">
-                                    </div>
-                                </div>
-
-                                <div id="department">
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label"> ডিপার্টমেন্ট </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="department">
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="dealer_id">
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">ডিলার আইডি</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="dealer_id">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="shop_name">
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">দোকানের নাম</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="shop_name">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">ইমেইল</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="inputEmail3" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">মোবাইল নম্বর</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="phone" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">জেলা</label>
-                                    <div class="col-sm-9">
-                                        <select id="inputState" class="form-control" name="district">
-                                            @foreach($districts as $district)
-                                                <option>{{$district['bn_name']}}</option>
-                                            @endforeach
-                                        </select>
-
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">উপজেলা</label>
-                                    <div class="col-sm-9">
-
-                                        <input type="text" class="form-control" id="inputEmail3" name="upazila">
-                                    </div>
-                                </div>
-
-                                <div id="area">
-                                    <div class="form-group row" id="">
-                                        <label for="inputPassword3" class="col-sm-3 col-form-label">এলাকা</label>
-                                        <div class="col-sm-9">
-
-                                            <input type="text" class="form-control" name="area">
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
 
 
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label"></label>
-                                    <div class="col-sm-9 pull-right">
-                                        <button type="submit" class="btn btn-primary">রেজাল্ট দেখুন</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
+            </div>
 
+        </div>
+
+        <!-- Page Heading -->
+{{--        <h1 class="h3 mb-2 text-gray-800">Dealer List</h1>--}}
+    {{-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+--}}
+    <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Dealer List</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                          {{--  <th>#</th>--}}
+                            <th>Dealer Id</th>
+                            <th>Name</th>
+                            <th>Shop Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>District</th>
+                            <th>Upazila</th>
+
+                            <th>Area</th>
+                            <th>Results</th>
+                            <th>Details</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            @php($i=1)
+                            @foreach($result as $res)
+
+                             {{--   <td>{{$i++}}</td>--}}
+                                <td>{{$res->dealer_id}}</td>
+                                <td>{{$res->name}}</td>
+                                <td>{{$res->shop_name}}</td>
+                                <td>{{$res->email}}</td>
+                                <td>{{$res->phone}}</td>
+                                <td>{{$res->district}}</td>
+                                <td>{{$res->upazila}}</td>
+                                <td>{{$res->area}}</td>
+                                <td>  <span class="badge badge-pill badge-success">{{getResult($res->patient_id)}}</span></td>
+
+
+                                <td><a href="/admin/patient/details/{{$res->patient_id}}"> Details</a></td>
+
+                        </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-    </section>
-
-    <script>
-        var app = angular.module('myApp', []);
-        app.controller('submitCtrl', function ($scope) {
-
-            // document.getElementById('is_pregnant').style.display = 'none';
-
-            // $scope.type=0;
-            console.log("App");
-
-            document.getElementById('dealer_id').style.display = 'none';
-            document.getElementById('shop_name').style.display = 'none';
-            document.getElementById('area').style.display = 'none';
-            document.getElementById('employee_id').style.display = 'none';
-            document.getElementById('department').style.display = 'none';
-            $scope.ageChange = function () {
-                console.log($scope.type);
-                if ($scope.type == 1) {
-                    document.getElementById('dealer_id').style.display = 'block';
-                    document.getElementById('shop_name').style.display = 'block';
-                    document.getElementById('area').style.display = 'block';
-
-                    document.getElementById('employee_id').style.display = 'none';
-                    document.getElementById('department').style.display = 'none';
-                } else {
-                    document.getElementById('employee_id').style.display = 'block';
-                    document.getElementById('department').style.display = 'block';
+    </div>
+    <!-- /.container-fluid -->
 
 
-                    document.getElementById('dealer_id').style.display = 'none';
-                    document.getElementById('shop_name').style.display = 'none';
-                    document.getElementById('area').style.display = 'none';
-                }
-
-            }
-
-        });
-    </script>
 @endsection

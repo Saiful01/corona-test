@@ -45,6 +45,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/password/edit', 'DashboardController@passwordchange');
     Route::post('/password/update', 'DashboardController@passwordUpdate');
 
+
+    Route::any('/emplyees', 'DashboardController@employees');
+    Route::any('/dealers', 'DashboardController@dealers');
+
 /*
     Route::get('/dashboard', 'DashboardController@dashboard');*/
 

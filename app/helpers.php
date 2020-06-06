@@ -11,6 +11,15 @@ function getScore($id)
     }
     return $data->score;
 }
+function getResult($id)
+{
+
+    $data = \App\Result::where('patient_id', $id)->orderBy('created_at', 'DESC')->first();
+    if(is_null($data)){
+        return 0;
+    }
+    return getRiskMeasurement($data->score);
+}
 
 function gettingSympTomIdtoValue($id)
 {
