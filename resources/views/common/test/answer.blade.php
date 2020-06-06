@@ -8,7 +8,9 @@
     <div class="col-md-8 mx-auto">
         <div class="container">
             <div class="card p-4">
-                <h4 class="text-danger text-center">{{$result}}</h4>
+                <h4 class="text-danger text-center">ফলাফল: {{$result}}</h4>
+                <hr>
+
                 <h6>আপনি এই উপদেশ গুলো মেনে চলুন:</h6>
                 <p>ডাক্তারের পরামর্শ নিন, বাসায় থাকুন, সতর্কতা অবলম্বন করুন ও নিজের যত্ন নিন।</p>
 

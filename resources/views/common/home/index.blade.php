@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Page Title')
+@section('title', 'Home')
 
 @section('content')
 
@@ -25,7 +25,7 @@
                                 <h1>Stay At Home, Keep You & Your Family Safe.</h1>
                                 <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
                                 <div class="btn-box">
-                                    <a href="index.html">How To protect</a>
+                                    <a href="/">How To protect</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                 <h1>Stay At Home, Keep You & Your Family Safe.</h1>
                                 <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
                                 <div class="btn-box">
-                                    <a href="index.html">How To protect</a>
+                                    <a href="/">How To protect</a>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                     </div>
                 </div>
             </div>
-            <div class="more-btn"><a href="index.html">How to Clean Hands?</a></div>
+            <div class="more-btn"><a href="/">How to Clean Hands?</a></div>
         </div>
     </section>
     <!-- protect-section end -->
@@ -305,10 +305,10 @@
                             <p>WHO is continuously monitoring and responding to this outbreak. This Q&A will be updated
                                 as more is known about COVID-19, how it spreads and how it is affecting people
                                 worldwide. For more information, check back regularly on WHO’s coronavirus pages. <a
-                                        href="index.html">https://www.who.int/emergencies/diseases-
+                                        href="/">https://www.who.int/emergencies/diseases-
                                     es/novel-coronavirus-2019</a></p>
                         </div>
-                        <div class="btn-box"><a href="index.html" class="theme-btn">Have A Question?</a></div>
+                        <div class="btn-box"><a href="/" class="theme-btn">Have A Question?</a></div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 faq-column">
@@ -403,14 +403,14 @@
                             <figure class="image-box">
                                 <img src="/theme/assets/images/team/team-1.png" alt="">
                                 <ul class="social-links clearfix">
-                                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-vimeo-v"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </figure>
                             <div class="lower-content">
-                                <h3><a href="index.html">Dr. Dorothy Nickell</a></h3>
+                                <h3><a href="/">Dr. Dorothy Nickell</a></h3>
                                 <span class="designation">Corona Specialist</span>
                                 <p>Coronavirus disease (COVID-19) is an infectious disease caused</p>
                                 <div class="phone"><a href="tel:8801234567890"><i class="fas fa-phone"></i>+880 1234 567
@@ -426,14 +426,14 @@
                             <figure class="image-box">
                                 <img src="/theme/assets/images/team/team-2.png" alt="">
                                 <ul class="social-links clearfix">
-                                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-vimeo-v"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </figure>
                             <div class="lower-content">
-                                <h3><a href="index.html">Dr. Peter Thomas</a></h3>
+                                <h3><a href="/">Dr. Peter Thomas</a></h3>
                                 <span class="designation">Corona Specialist</span>
                                 <p>Coronavirus disease (COVID-19) is an infectious disease caused</p>
                                 <div class="phone"><a href="tel:8801234567890"><i class="fas fa-phone"></i>+880 1234 567
@@ -449,14 +449,14 @@
                             <figure class="image-box">
                                 <img src="/theme/assets/images/team/team-3.png" alt="">
                                 <ul class="social-links clearfix">
-                                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
-                                    <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-vimeo-v"></i></a></li>
+                                    <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </figure>
                             <div class="lower-content">
-                                <h3><a href="index.html">Dr. Elizabeth Nelson</a></h3>
+                                <h3><a href="/">Dr. Elizabeth Nelson</a></h3>
                                 <span class="designation">Corona Specialist</span>
                                 <p>Coronavirus disease (COVID-19) is an infectious disease caused</p>
                                 <div class="phone"><a href="tel:8801234567890"><i class="fas fa-phone"></i>+880 1234 567
@@ -637,8 +637,8 @@
                     </div>
                     <div class="col-xl-6 col-lg-12 col-md-12 btn-column">
                         <div class="btn-box clearfix">
-                            <a href="index.html" class="btn-2">Test Covid-19</a>
-                            <a href="index.html" class="theme-btn">Book A Doctor</a>
+                            <a href="/" class="btn-2">Test Covid-19</a>
+                            <a href="/" class="theme-btn">Book A Doctor</a>
                         </div>
                     </div>
                 </div>

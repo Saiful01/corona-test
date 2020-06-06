@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- symptoms-section -->
-    <section class="symptoms-section" id="symptoms">
+    <section class="symptoms-section" id="symptoms" ng-controller="myCtrl">
         <div class="auto-container">
             <div class="sec-title centred">
                 <h6>Test Corona</h6>
@@ -100,8 +100,8 @@
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
                                                value="1"> শরীরের
                                         তাপমাত্রা স্বাভাবিক আছে 96°F-98.6°F<br>
-                                        <input type="radio" name="temperature" ng-click="temperatureChange()"
-                                               value="2"> শরীরের তাপমাত্রা স্বাভাবিক আছে 98°F-100.6°F<br>
+                                       {{-- <input type="radio" name="temperature" ng-click="temperatureChange()"
+                                               value="2"> শরীরের তাপমাত্রা স্বাভাবিক আছে 98°F-100.6°F<br>--}}
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"
                                                value="3"> জ্বর 98.6°F-102°F<br>
                                         <input type="radio" name="temperature" ng-click="temperatureChange()"

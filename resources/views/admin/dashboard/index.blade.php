@@ -95,6 +95,44 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body">
+                    Confirmed
+                    <div class="text-white-50 small">{{$confirmed}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body">
+                    Isolation
+                    <div class="text-white-50 small">{{$isolation}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body">
+                    Hospitalize
+                    <div class="text-white-50 small">{{$hospitalize}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body">
+                    Death
+                    <div class="text-white-50 small">{{$death}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Content Row -->
 
     <div class="row">
@@ -452,7 +490,7 @@
             data: {
                 labels: ["Male", "Female", "Other"],
                 datasets: [{
-                    data: [{{$data}}, {{$data2}}, {{$data2}}],
+                    data: [{{$male_count}}, {{$female_count}}, {{$other_count}}],
                     backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                     hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                     hoverBorderColor: "rgba(234, 236, 244, 1)",

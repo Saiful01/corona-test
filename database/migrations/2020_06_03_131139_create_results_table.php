@@ -27,6 +27,7 @@ class CreateResultsTable extends Migration
             $table->string('is_nurse')->nullable();
             $table->string('symptom_change')->nullable();
             $table->integer('score')->default(0);
+            $table->string('status')->default("1");// Confirmed, Death, Isolation, Hospitalize
             $table->unsignedBigInteger('patient_id')->nullable();
             $table->timestamps();
         });

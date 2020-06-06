@@ -54,7 +54,13 @@ class DashboardController extends Controller
             ->with('male_count', $male_count)
             ->with('other_count', $other_count)
             ->with('histories', $histories)
-            ->with('total', $total);
+            ->with('total', $total)
+
+
+            ->with('confirmed', 12)
+            ->with('hospitalize', 12)
+            ->with('isolation', 12)
+            ->with('death', 12);
 
     }
 

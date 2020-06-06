@@ -17,6 +17,8 @@ Route::get('/corona', function () {
 
 
 Route::get('/', 'Controller@home');
+Route::get('/pre-test', 'Controller@preTest');
+Route::get('/pre-test/go', 'Controller@preTestGo');
 Route::get('/corona-test', function () {
     return view('common.test.index');
 });

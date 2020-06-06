@@ -78,7 +78,7 @@
 
     <!-- symptoms-section -->
     <section class="symptoms-section" id="symptoms">
-        <div class="auto-container">
+        <div class="auto-container" ng-controller="submitCtrl">
 
 
             <div class="row">
@@ -100,6 +100,32 @@
                     <div class="card">
                         <div class="card-body">
                             <form action="/corona-test/result" method="post">
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">টাইপ</label>
+                                    <div class="col-sm-9">
+                                        <select id="inputState" class="form-control" name="type" ng-model="type"
+                                                ng-click="ageChange()">
+
+                                            <option value="0">নির্বাচন করুন</option>
+                                            <option value="1">ডিলার</option>
+                                            <option value="2">এমপ্লয়ি</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div id="employee_id">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label"> আইডি</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="employee_id">
+
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">নাম</label>
                                     <div class="col-sm-9">
@@ -109,10 +135,39 @@
                                         <input type="hidden" name="result" value="{{$result}}">
                                     </div>
                                 </div>
+
+                                <div id="department">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label"> ডিপার্টমেন্ট </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="department">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="dealer_id">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">ডিলার আইডি</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="dealer_id">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="shop_name">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">দোকানের নাম</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="shop_name">
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">ইমেইল</label>
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="inputEmail3" name="email" required>
+                                        <input type="email" class="form-control" id="inputEmail3" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -140,6 +195,16 @@
                                     </div>
                                 </div>
 
+                                <div id="area">
+                                    <div class="form-group row" id="">
+                                        <label for="inputPassword3" class="col-sm-3 col-form-label">এলাকা</label>
+                                        <div class="col-sm-9">
+
+                                            <input type="text" class="form-control" name="area">
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"></label>
@@ -156,4 +221,42 @@
         </div>
 
     </section>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('submitCtrl', function ($scope) {
+
+            // document.getElementById('is_pregnant').style.display = 'none';
+
+            // $scope.type=0;
+            console.log("App");
+
+            document.getElementById('dealer_id').style.display = 'none';
+            document.getElementById('shop_name').style.display = 'none';
+            document.getElementById('area').style.display = 'none';
+            document.getElementById('employee_id').style.display = 'none';
+            document.getElementById('department').style.display = 'none';
+            $scope.ageChange = function () {
+                console.log($scope.type);
+                if ($scope.type == 1) {
+                    document.getElementById('dealer_id').style.display = 'block';
+                    document.getElementById('shop_name').style.display = 'block';
+                    document.getElementById('area').style.display = 'block';
+
+                    document.getElementById('employee_id').style.display = 'none';
+                    document.getElementById('department').style.display = 'none';
+                } else {
+                    document.getElementById('employee_id').style.display = 'block';
+                    document.getElementById('department').style.display = 'block';
+
+
+                    document.getElementById('dealer_id').style.display = 'none';
+                    document.getElementById('shop_name').style.display = 'none';
+                    document.getElementById('area').style.display = 'none';
+                }
+
+            }
+
+        });
+    </script>
 @endsection

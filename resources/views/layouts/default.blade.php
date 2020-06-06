@@ -68,7 +68,7 @@
 
 
 <!-- page wrapper -->
-<body ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp">
 <div class="boxed_wrapper">
 
     <!-- preloader -->
@@ -140,7 +140,7 @@
                     </div>
                 </nav>
                 <div class="btn-box">
-                    <a href="/corona-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
+                    <a href="/pre-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
                         <!--Keep This Empty / Menu will come through Javascript-->
                     </nav>
                     <div class="btn-box">
-                        <a href="/corona-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
+                        <a href="/pre-test" class="theme-btn"><i class="fa fa-user-md" aria-hidden="true"></i>Emergency Test</a>
                     </div>
                 </div>
             </div>

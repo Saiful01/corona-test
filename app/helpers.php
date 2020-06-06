@@ -120,4 +120,18 @@ function dateFormat($date)
     $createdAt = Carbon::parse($date);
     return $createdAt->format('d M');
 }
+
+function getRiskMeasurement($risk_counter)
+{
+
+    if ($risk_counter > 50) {
+        $risk_valeu = "অত্যধিক ঝুঁকিপূর্ণ";
+    } else if ($risk_counter > 34) {
+        $risk_valeu = "মধ্যম ঝুঁকিপূর্ণ";
+    } else {
+        $risk_valeu = "কম ঝুঁকিপূর্ণ";
+    }
+
+    return $risk_valeu;
+}
 ?>
